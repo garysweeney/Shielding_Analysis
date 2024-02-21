@@ -18,14 +18,14 @@ no_shield = integrate_spectrum("no_shield.txt")
 
 # water
 water = [no_shield]
-for i in range(1,12):
+for i in range(1,21):
     water.append(integrate_spectrum("water/water_{}cm.txt".format(i*5)))
 
 depth = np.linspace(0, 150, 31)
 
 plt.figure()
 plt.scatter(depth[:len(water)], water)
-plt.yscale("log")
-plt.xscale("log")
+#plt.yscale("log")
+#plt.xscale("log")
 plt.xlim(-0.1,100)
 plt.show()
