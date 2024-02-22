@@ -1,6 +1,6 @@
 Chain    Production_Rate    Activity
 -        [n/g/s/ppb]        [ppb]
-Th232    
-U238U
-U238L
-U235  
+Th232    2.400E-11          3910
+U238U    1.638E-11          1320
+U238L    4.522E-11          860
+U235     3.341E-10          540
