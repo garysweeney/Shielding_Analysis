@@ -56,5 +56,5 @@ plt.scatter(depth, borated_water_normalized, label = "Borated Water", color='red
 plt.yscale("log")
 #plt.xscale("log")
 plt.xlim(0,150)
-plt.xlim(0,10000000)
+plt.ylim(0,10000000)
 plt.show()
