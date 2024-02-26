@@ -17,7 +17,8 @@ def read_neutrons(file):
 
 def integrate_spectrum(file):
     flux = read_neutrons(file)
-    return(len(flux))
+    fast_flux = flux[np.where(flux > 100.)]
+    return(len(fast_flux))
 
 no_shield = integrate_spectrum("no_shield.txt")
 
@@ -48,14 +49,14 @@ HDPE_normalized =  [i / (surf_area * livetime) for i in HDPE]
 plt.figure()
 plt.xticks(fontsize=12)
 plt.yticks(fontsize=12)
-plt.xlabel("Depth (cm)", fontsize=12)
-plt.ylabel(r"Observed Flux (n/m$^2$/yr)", fontsize=12)
+plt.xlabel("Depth [cm]", fontsize=12)
+plt.ylabel(r"Observed Fast Flux ($E_n \geq 100$ eV) [n/m$^2$/yr]", fontsize=12)
 plt.scatter(depth[:19], HDPE_normalized, label = "HDPE", color='green')
 plt.scatter(depth, water_normalized, label = "Water", color='blue')
 plt.scatter(depth, borated_water_normalized, label = "Borated Water", color='red')
 plt.yscale("log")
-#plt.xscale("log")
+plt.legend(fontsize=12)
 plt.grid(True)
 plt.xlim(0,110)
-plt.ylim(0,10000000)
+#plt.ylim(0,10000000)
 plt.show()

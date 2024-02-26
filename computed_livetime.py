@@ -15,7 +15,7 @@ def compute_livetime(nEvents):
     activity = [float(i) for i in activity]
 
     # Compute mass of norite sphere
-    volume = ((4 * np.pi) / 3) * (340.**3 - 270.**3) # 4pi/3 r^3 [cm3]
+    volume = ((4 * np.pi) / 3) * (10.**3)#(340.**3 - 270.**3) # 4pi/3 r^3 [cm3]
     density = 2.88 # [g/cm3]
     mass = volume * density #[g]
 
